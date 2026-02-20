@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herencia de Raíz - Herbolaria Natural</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- TOGGLE -->
+<input type="checkbox" id="menu-toggle">
+
+<header class="header">
+    <label for="menu-toggle" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+    <div class="logo">
+        <img src="logo2.jpg" alt="Herencia de Raíz Logo">
+    </div>
+
+    <h1 class="titulo">Herencia de Raíz</h1>
+
+    <div class="header-icons">
+        <button class="icon-btn" id="search-btn" title="Buscar productos">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+            </svg>
+        </button>
+        <button class="icon-btn" id="cart-btn" title="Carrito de compras">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            <span class="cart-count" id="cart-count">0</span>
+        </button>
+    </div>
+</header>
+
+<nav class="side-menu">
+    <a href="index.html">PRODUCTOS</a>
+    <a href="quienes.html">QUIÉNES SOMOS</a>
+    <a href="contactanos.html">CONTÁCTANOS</a>
+</nav>
+
+<!-- BARRA DE BÚSQUEDA -->
+<div class="search-bar" id="search-bar">
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Buscar productos...">
+        <button class="search-close" id="search-close">✕</button>
+    </div>
+</div>
+
+<!-- CARRITO LATERAL -->
+<div class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-header">
+        <h3>Carrito de Compras</h3>
+        <button class="cart-close" id="cart-close">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items">
+        <p class="empty-cart">Tu carrito está vacío</p>
+    </div>
+    <div class="cart-footer">
+        <div class="cart-total">
+            <span>Total:</span>
+            <span id="cart-total">$0.00</span>
+        </div>
+        <button class="btn-checkout" id="btn-checkout">Proceder al pago</button>
+    </div>
+</div>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay"></div>
+
+<!-- MODAL DE CONFIRMACIÓN -->
+<div class="modal" id="confirmation-modal">
+    <div class="modal-content">
+        <h3>Confirmación de compra</h3>
+        <p>¿Deseas confirmar tu compra?</p>
+        <div class="modal-buttons">
+            <button class="btn-modal btn-cancel" id="btn-cancel">Cancelar</button>
+            <button class="btn-modal btn-confirm" id="btn-confirm">Confirmar</button>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL DE ÉXITO -->
+<div class="modal" id="success-modal">
+    <div class="modal-content success">
+        <div class="success-icon">✓</div>
+        <h3>¡Compra realizada exitosamente!</h3>
+        <p>Gracias por tu compra. Recibirás un correo con los detalles.</p>
+        <button class="btn-modal btn-confirm" id="btn-close-success">Aceptar</button>
+    </div>
+</div>
+
+<main class="main">
+    <section class="hero">
+        <h2>Tradición que se disfruta</h2>
+        <p>Descubre el poder natural de nuestras infusiones de herbolaria</p>
+    </section>
+
+    <section class="products">
+        <div class="product" data-name="Infusión Sangre de Cristo" data-price="70.00">
+            <div class="img">
+                <img src="producto1.png" alt="Infusión" width="202" height="190">
+            </div>
+            <h4>Infusión Sangre de Cristo</h4>
+            <p class="rating">★★★★★ <span>(24 opiniones)</span></p>
+            <p class="price">$70.00</p>
+            <button class="btn-add">Agregar al carrito</button>
+        </div>
+
+        <div class="product" data-name="Té Herbal Premium" data-price="0.0">
+           <img src="producto2.jpeg" alt="Infusión" width="202" height="190">
+            <h4>Proximamente</h4>
+            <p class="rating"><span></span></p>
+             <!--  <p class="price">$75.00</p> 
+            <button class="btn-add">Agregar al carrito</button>-->
+        </div>
+
+        <div class="product" data-name="SN" data-price="0.00">
+        <img src="producto2.jpeg" alt="Infusión" width="202" height="190">
+            <h4>Proximamente</h4>
+            <p class="rating"><span></span></p>
+            <!--  <p class="price">$75.00</p> 
+            <button class="btn-add">Agregar al carrito</button>-->
+        </div>
+
+        <div class="product" data-name="SN" data-price="0.00">
+             <img src="producto2.jpeg" alt="Infusión" width="202" height="190">
+            <h4>Proximamente</h4>
+            <p class="rating"><span></span></p>
+            <!--  <p class="price">$75.00</p> 
+            <button class="btn-add">Agregar al carrito</button>-->
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Herencia de Raíz</h3>
+            <p>Tradición que se disfruta</p>
+        </div>
+
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Herencia de Raíz. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<script>
+// ========== CARRITO DE COMPRAS ==========
+let cart = [];
+
+// Elementos
+const cartBtn = document.getElementById('cart-btn');
+const cartSidebar = document.getElementById('cart-sidebar');
+const cartClose = document.getElementById('cart-close');
+const cartItems = document.getElementById('cart-items');
+const cartCount = document.getElementById('cart-count');
+const cartTotal = document.getElementById('cart-total');
+const overlay = document.getElementById('overlay');
+const addToCartBtns = document.querySelectorAll('.btn-add');
+
+// Abrir/cerrar carrito
+cartBtn.addEventListener('click', () => {
+    cartSidebar.classList.add('active');
+    overlay.classList.add('active');
+});
+
+cartClose.addEventListener('click', closeCart);
+overlay.addEventListener('click', () => {
+    closeCart();
+    closeSearch();
+});
+
+function closeCart() {
+    cartSidebar.classList.remove('active');
+    overlay.classList.remove('active');
+}
+
+// Agregar al carrito
+addToCartBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        const productEl = e.target.closest('.product');
+        const name = productEl.getAttribute('data-name');
+        const price = parseFloat(productEl.getAttribute('data-price'));
+        
+        addToCart(name, price);
+    });
+});
+
+function addToCart(name, price) {
+    const existingItem = cart.find(item => item.name === name);
+    
+    if (existingItem) {
+        existingItem.quantity++;
+    } else {
+        cart.push({ name, price, quantity: 1 });
+    }
+    
+    updateCart();
+}
+
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    updateCart();
+}
+
+function updateCart() {
+    cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+    
+    if (cart.length === 0) {
+        cartItems.innerHTML = '<p class="empty-cart">Tu carrito está vacío</p>';
+        cartTotal.textContent = '$0.00';
+        return;
+    }
+    
+    let total = 0;
+    cartItems.innerHTML = cart.map((item, index) => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+        return `
+            <div class="cart-item">
+                <div class="cart-item-info">
+                    <h4>${item.name}</h4>
+                    <p>$${item.price.toFixed(2)} x ${item.quantity}</p>
+                </div>
+                <div class="cart-item-actions">
+                    <span class="cart-item-total">$${itemTotal.toFixed(2)}</span>
+                    <button class="cart-item-remove" onclick="removeFromCart(${index})">✕</button>
+                </div>
+            </div>
+        `;
+    }).join('');
+    
+    cartTotal.textContent = `$${total.toFixed(2)}`;
+}
+
+// ========== BUSCADOR ==========
+const searchBtn = document.getElementById('search-btn');
+const searchBar = document.getElementById('search-bar');
+const searchInput = document.getElementById('search-input');
+const searchClose = document.getElementById('search-close');
+const products = document.querySelectorAll('.product');
+
+searchBtn.addEventListener('click', () => {
+    searchBar.classList.add('active');
+    searchInput.focus();
+});
+
+searchClose.addEventListener('click', closeSearch);
+
+function closeSearch() {
+    searchBar.classList.remove('active');
+    searchInput.value = '';
+    products.forEach(p => p.style.display = 'block');
+}
+
+searchInput.addEventListener('input', (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+    
+    products.forEach(product => {
+        const productName = product.getAttribute('data-name').toLowerCase();
+        if (productName.includes(searchTerm)) {
+            product.style.display = 'block';
+        } else {
+            product.style.display = 'none';
+        }
+    });
+});
+
+// ========== PROCEDER AL PAGO ==========
+const checkoutBtn = document.getElementById('btn-checkout');
+const confirmationModal = document.getElementById('confirmation-modal');
+const successModal = document.getElementById('success-modal');
+const btnCancel = document.getElementById('btn-cancel');
+const btnConfirm = document.getElementById('btn-confirm');
+const btnCloseSuccess = document.getElementById('btn-close-success');
+
+checkoutBtn.addEventListener('click', () => {
+    // Verificar que hay productos en el carrito
+    if (cart.length === 0) {
+        alert('Tu carrito está vacío. Agrega productos antes de proceder al pago.');
+        return;
+    }
+    
+    // Mostrar modal de confirmación
+    confirmationModal.classList.add('active');
+    overlay.classList.add('active');
+});
+
+// Botón Cancelar en modal de confirmación
+btnCancel.addEventListener('click', () => {
+    confirmationModal.classList.remove('active');
+    overlay.classList.remove('active');
+});
+
+// Botón Confirmar en modal de confirmación
+btnConfirm.addEventListener('click', () => {
+    // Ocultar modal de confirmación
+    confirmationModal.classList.remove('active');
+    
+    // Mostrar modal de éxito
+    successModal.classList.add('active');
+    
+    // Vaciar el carrito
+    cart = [];
+    updateCart();
+    
+    // Cerrar el carrito
+    closeCart();
+});
+
+// Botón Aceptar en modal de éxito
+btnCloseSuccess.addEventListener('click', () => {
+    successModal.classList.remove('active');
+    overlay.classList.remove('active');
+});
+
+
+</script>
+
+</body>
+</html>
