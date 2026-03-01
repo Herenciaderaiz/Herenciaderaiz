@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contáctanos - Herencia de Raíz</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- TOGGLE -->
+<input type="checkbox" id="menu-toggle">
+
+<header class="header">
+    <label for="menu-toggle" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+    <div class="logo">
+        <img src="logo2.jpg" alt="Herencia de Raíz Logo">
+    </div>
+
+    <h1 class="titulo">Herencia de Raíz</h1>
+</header>
+
+<nav class="side-menu">
+    <a href="index.html">PRODUCTOS</a>
+    <a href="quienes.html">QUIÉNES SOMOS</a>
+    <a href="contactanos.html">CONTÁCTANOS</a>
+</nav>
+
+<main class="main">
+    <!-- TÍTULO PRINCIPAL -->
+    <section class="contacto-hero">
+        <h2>¿Tienes alguna pregunta?</h2>
+        <p>Estamos aquí para ayudarte. Contáctanos y te responderemos a la brevedad.</p>
+    </section>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="contacto-container">
+        
+        <!-- FORMULARIO DE CONTACTO -->
+        <section class="formulario-section">
+            <h3>Envíanos un mensaje</h3>
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label for="nombre">Nombre completo *</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correo electrónico *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono">
+                </div>
+
+                <div class="form-group">
+                    <label for="asunto">Asunto *</label>
+                    <select id="asunto" name="asunto" required>
+                        <option value="">Selecciona un asunto</option>
+                        <option value="consulta">Consulta sobre productos</option>
+                        <option value="pedido">Estado de mi pedido</option>
+                        <option value="sugerencia">Sugerencias</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Mensaje *</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Enviar mensaje</button>
+            </form>
+            <div id="form-message" class="form-message"></div>
+        </section>
+
+        <!-- INFORMACIÓN DE CONTACTO -->
+        <aside class="info-contacto">
+            
+            <!-- DATOS DE CONTACTO -->
+            <div class="contacto-card">
+                <div class="contacto-icon">📧</div>
+                <h4>Correo Electrónico</h4>
+                <p>contacto@herenciaderaiz.com</p>
+            </div>
+
+            <div class="contacto-card">
+                <div class="contacto-icon">🕒</div>
+                <h4>Horarios de Atención</h4>
+                <p><strong>Lunes - Viernes:</strong><br>9:00 AM - 6:00 PM</p>
+                <p><strong>Sábado:</strong><br>10:00 AM - 2:00 PM</p>
+                <p><strong>Domingo:</strong> Cerrado</p>
+            </div>
+
+            <!-- UBICACIÓN -->
+            <div class="contacto-card">
+                <div class="contacto-icon">📍</div>
+                <h4>Ubicación</h4>
+                <p>Avenida eficacia #1285, entre Mariano Arista y Esteban Morales.</p>
+                <p>Código Postal: 91712</p>
+                <p>Tel. 2293557895</p>
+            </div>
+
+            <!-- REDES SOCIALES -->
+            <div class="contacto-card redes-sociales">
+                <div class="contacto-icon">🌐</div>
+                <h4>Síguenos en Redes</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/179n9zHJHi/?mibextid=wwXIfr" class="social-card facebook-card" title="Facebook" target="_blank">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                        <span>Herencia de Raíz</span>
+                    </a>
+                </div>
+            </div>
+
+        </aside>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Herencia de Raíz</h3>
+            <p>Tradición que se disfruta</p>
+        </div>
+
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Herencia de Raíz. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<script>
+// Validación y envío del formulario
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const formMessage = document.getElementById('form-message');
+    const nombre = document.getElementById('nombre').value;
+    
+    // Simulación de envío exitoso
+    formMessage.innerHTML = `
+        <div class="success-message">
+            <strong>¡Gracias, ${nombre}!</strong><br>
+            Tu mensaje ha sido enviado exitosamente. Nos pondremos en contacto contigo pronto.
+        </div>
+    `;
+    
+    // Limpiar formulario
+    this.reset();
+    
+    // Ocultar mensaje después de 5 segundos
+    setTimeout(() => {
+        formMessage.innerHTML = '';
+    }, 5000);
+});
+</script>
+
+</body>
+</html>
